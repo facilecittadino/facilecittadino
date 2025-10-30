@@ -45,13 +45,15 @@ body{
   background-image:url('logo.jpeg');
   background-repeat:no-repeat;
   background-position:center center;
-  /* Now covers at least 50% of viewport width */
-  background-size:max(50vw, 420px);
-  opacity:0.08; /* slightly more visible but still subtle */
-  filter:grayscale(100%) contrast(90%);
+  /* was: max(50vw, 420px) */
+  background-size:max(58vw, 460px); /* thoda sa zyada width */
+  opacity:0.12;                     /* was 0.08 — halki si zyada visibility */
+  filter:grayscale(20%) contrast(100%);
   pointer-events:none;
   z-index:-1;
 }
+
+
 
 /* =========================================================
    2) Navbar
@@ -162,14 +164,22 @@ body{
 }
 .hero{ width:100%; max-width:980px; margin-inline:auto; }
 .hero-card{
-  /* Glassy card: subtle blur + translucency */
-  background: rgba(255,255,255,0.55);
-  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   border-radius: var(--radius);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  padding: clamp(18px, 3vw, 32px);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12),
+              0 2px 6px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  padding: clamp(20px, 3vw, 36px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 30px;
+}
+
+.hero-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.16),
+              0 3px 10px rgba(0, 0, 0, 0.10);
 }
 .hero-card h1{
   margin:0 0 8px 0;
