@@ -15,7 +15,7 @@ window.APP_CONFIG = Object.freeze({
   // Default: 60 × 1000 = 1 minute
   // You can change to 3600 × 1000 = 1 hour when stable
   // ---------------------------
-  EXPIRY_MS: 5 * 1000,
+  EXPIRY_MS: 60 * 1000,
 
   // ---------------------------
   // Storage Keys
